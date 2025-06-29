@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Ju99ernaut/grapesjs-tailwind.git"
+        "url": "https://github.com/MadFenix/grapesjs-tailwind.git"
     },
     "scripts": {
         "start": "grapesjs-cli serve",
