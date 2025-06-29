@@ -125,12 +125,21 @@ import { source as z4s } from './data/icons/footer-4'
 import { source as z5 } from './data/footer-5'
 import { source as z5s } from './data/icons/footer-5'
 
-const getSvgHtml = (svg) => {
-  if (typeof window === 'undefined') return ''
-  svg.setAttribute('width', '100%')
-  svg.setAttribute('height', '100%')
-  return svg.outerHTML
-}
+const getSvgHtml = (svgString) => {
+  if (typeof window === 'undefined') return '';
+
+  // Si es un string de SVG, lo usamos directamente
+  if (typeof svgString === 'string') {
+    return svgString;
+  }
+
+  // Si por alguna razón recibimos un elemento DOM
+  if (svgString && svgString.outerHTML) {
+    return svgString.outerHTML;
+  }
+
+  return '';
+};
 
 const sources = [
   {
@@ -646,7 +655,7 @@ export default (editor, options = {}) => {
 
   sources.forEach((s) => {
     bm.add(s.id, {
-      label: getSvgHtml(editor.$(s.label).get(0)),
+      label: getSvgHtml(s.label), // Aquí s.label ya es el string del SVG
       attributes: { class: `${s.class} block-full-width` },
       content: s.content,
       category: { label: s.category, open: s.category === options.openCategory },
