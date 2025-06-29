@@ -655,7 +655,7 @@ export default (editor, options = {}) => {
 
   sources.forEach((s) => {
     bm.add(s.id, {
-      label: getSvgHtml(s.label), // Aquí s.label ya es el string del SVG
+      media: getSvgHtml(s.label), // Aquí s.label ya es el string del SVG
       attributes: { class: `${s.class} block-full-width` },
       content: s.content,
       category: { label: s.category, open: s.category === options.openCategory },
