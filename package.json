@@ -1,6 +1,6 @@
 {
     "name": "grapesjs-tailwind-madfenix",
-    "version": "1.0.18",
+    "version": "1.0.19",
     "description": "Grapesjs Tailwind madfenix",
     "main": "dist/index.js",
     "repository": {
